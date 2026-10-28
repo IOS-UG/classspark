@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Random Team Generator — Group Students Fairly, Instantly | ClassSpark</title>
+<meta name="description" content="Free random team generator for teachers. Split your class into fair, balanced groups in one click — by number of teams or team size. Save class lists. Print or copy results.">
+<meta property="og:title" content="Random Team Generator for Classrooms">
+<meta property="og:description" content="Split your class into fair balanced teams instantly. By team count or size. Free, no sign-up, printable.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://classspark.pages.dev/teams/">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E🧩%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/style.css">
+<script src="../shared/teams.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I split a class into random groups?","acceptedAnswer":{"@type":"Answer","text":"Paste your students one per line, choose the number of teams (or students per team) and press Generate. Names are shuffled fairly with a true random shuffle."}},
+{"@type":"Question","name":"Are team sizes balanced?","acceptedAnswer":{"@type":"Answer","text":"Yes — students are dealt around the teams round-robin, so every team differs by at most one student."}},
+{"@type":"Question","name":"Can I print the teams?","acceptedAnswer":{"@type":"Answer","text":"Yes — use the Print button for a clean printout to stick on the wall, or Copy to paste the team lists anywhere."}}
+]}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../">⚡ Class<span>Spark</span></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../wheel/">Wheel</a>
+      <a href="../timer/">Timer</a>
+      <a href="../teams/" class="on">Teams</a>
+      <a href="../seating/">Seating</a>
+      <a href="../dice/">Dice</a>
+      <a href="../words/">Words</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Random Team Generator</h1>
+  <p class="lead">Paste your class list, choose how many teams, and get fair, balanced groups in one click. No favoritism arguments, no leftover students — deal, learn, done.</p>
+
+  <div class="card">
+    <label class="field" for="roster">Students — one name per line</label>
+    <textarea id="roster" class="manifest" spellcheck="false"></textarea>
+
+    <div class="row" style="margin-top:14px">
+      <strong style="font-size:14px">Split by:</strong>
+      <label class="check"><input type="radio" name="mode" id="modeCount" checked> number of teams</label>
+      <label class="check"><input type="radio" name="mode" id="modeSize"> students per team</label>
+    </div>
+    <div class="row" style="margin-top:8px" id="fieldCount">
+      <input class="txt" id="teamN" type="number" min="2" max="12" value="4" style="max-width:110px">
+      <span class="hint">teams (2–12)</span>
+    </div>
+    <div class="row" style="margin-top:8px" id="fieldSize" hidden>
+      <input class="txt" id="sizeN" type="number" min="2" max="20" value="4" style="max-width:110px">
+      <span class="hint">students per team (2–20)</span>
+    </div>
+
+    <div class="row" style="margin-top:16px">
+      <button class="btn big" id="makeBtn">🎲 Generate teams</button>
+      <button class="btn ghost" id="copyBtn" disabled>⧉ Copy</button>
+      <button class="btn ghost" id="printBtn" disabled>🖨️ Print</button>
+    </div>
+    <p class="hint" id="stats" style="margin:6px 0 0"></p>
+
+    <div class="row" style="margin-top:14px;border-top:1px dashed #e2e8f0;padding-top:14px">
+      <input class="txt" id="listName" placeholder="Save class as… (e.g. Period 2)">
+      <button class="btn ghost tiny" id="saveList">Save</button>
+      <button class="btn danger tiny" id="deleteList">Delete</button>
+      <select class="txt" id="savedLists" style="max-width:220px"></select>
+    </div>
+    <p><small class="hint">💾 Saved classes live only in this browser on this device.</small></p>
+  </div>
+
+  <div id="outWrap" hidden>
+    <h2 id="outTitle">Teams</h2>
+    <div id="out" class="teams-grid"></div>
+  </div>
+
+  <h2>Why teachers team up this way</h2>
+  <p>Grouping students by hand costs ten minutes and always leaves someone grumbling about "unfair teams." This generator shuffles the whole class with a genuine random shuffle and deals students around the teams round-robin — so sizes stay balanced and nobody ever needs to argue with the method. Group your class for labs, literature circles, project sprints, centers, or review games — then press Print for a clean page to stick on the wall.</p>
+
+  <details>
+    <summary>Can I avoid certain students being together?</summary>
+    <p>This generator keeps grouping fast and fair. For special pairings, use it as a starting point and swap names in the copy-pasted list — most teachers find the random result already works.</p>
+  </details>
+  <details>
+    <summary>Does it remember my class?</summary>
+    <p>Your list can be saved by name in this browser (e.g. "Period 2"). It never leaves your device — no account, no upload.</p>
+  </details>
+
+  <h2>More free tools</h2>
+  <div class="moretools">
+    <a href="../wheel/">🎡 Wheel Spinner — random name picker</a>
+    <a href="../timer/">⏱️ Countdown Timer & Stopwatch</a>
+    <a href="../seating/">🪑 Seating Chart Maker</a>
+    <a href="../dice/">🎲 Dice Roller</a>
+    <a href="../words/">🔤 Word Counter</a>
+  </div>
+</main>
+
+<div id="toast" class="toast">Copied ✓</div>
+
+<footer>
+  <div>
+    <a href="../">All tools</a> · <a href="../wheel/">Wheel</a> · <a href="../timer/">Timer</a> · <a href="../seating/">Seating</a> · <a href="../dice/">Dice</a> · <a href="../words/">Words</a>
+  </div>
+  <p style="margin-top:8px">Random Team Generator by ClassSpark — fair groups, every time.<br>© 2026 ClassSpark</p>
+</footer>
+</body>
+</html>

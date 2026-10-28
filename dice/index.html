@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dice Roller Online — D6, D20 & More for Class Games | ClassSpark</title>
+<meta name="description" content="Free online dice roller for classrooms and board games. Roll 1–6 dice, standard six-sided with pips or D4–D20, big display for the smartboard, roll history. No sign-up.">
+<meta property="og:title" content="Online Dice Roller for Teachers & Games">
+<meta property="og:description" content="Roll 1–6 dice on your smartboard. Six-sided pips or D4–D20, animated rolls, history. Free, no sign-up.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://classspark.pages.dev/dice/">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E🎲%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/style.css">
+<script src="../shared/dice.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I roll dice online?","acceptedAnswer":{"@type":"Answer","text":"Choose how many dice and pick the die type (six-sided with dots, or D4–D20), then press Roll or hit the spacebar."}},
+{"@type":"Question","name":"Are the rolls random and fair?","acceptedAnswer":{"@type":"Answer","text":"Yes — each die is rolled with your browser's random number generator, so every face has an equal chance every time."}},
+{"@type":"Question","name":"Can I roll a D20?","acceptedAnswer":{"@type":"Answer","text":"Yes — select d20 in the die-type box (d4, d6, d8, d10, d12 and d20 all supported), any mix of 1–6 dice."}}
+]}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../">⚡ Class<span>Spark</span></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../wheel/">Wheel</a>
+      <a href="../timer/">Timer</a>
+      <a href="../teams/">Teams</a>
+      <a href="../seating/">Seating</a>
+      <a href="../dice/" class="on">Dice</a>
+      <a href="../words/">Words</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Online Dice Roller</h1>
+  <p class="lead">Real classroom dice sound & drama, zero lost-under-the-cabinet dice. Roll 1–6 dice on the smartboard — six-sided with dots, or D4 to D20 for games and probability lessons.</p>
+
+  <div class="card">
+    <div class="row">
+      <div class="row" style="gap:6px"><label class="check" for="countIn">Dice</label><input class="txt" id="countIn" type="number" min="1" max="6" style="max-width:80px"></div>
+      <div class="row" style="gap:6px">
+        <label class="check" for="sidesSel">Type</label>
+        <select class="txt" id="sidesSel">
+          <option value="4">d4</option>
+          <option value="6" selected>d6 (dots)</option>
+          <option value="8">d8</option>
+          <option value="10">d10</option>
+          <option value="12">d12</option>
+          <option value="20">d20</option>
+        </select>
+      </div>
+      <label class="check"><input type="checkbox" id="sound" checked> Sound</label>
+    </div>
+
+    <div class="stage">
+      <div id="diceRow" class="dice-row"></div>
+      <div style="margin-top:18px">
+        <div id="totalLabel" class="hint">2d6 → total</div>
+        <div id="total" class="display" style="font-size:clamp(48px,10vw,110px)">—</div>
+      </div>
+      <div class="row" style="justify-content:center;margin-top:10px">
+        <button class="btn big" id="rollBtn">🎲 Roll! (space)</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="justify-content:space-between">
+      <h3 style="margin:0">Last rolls</h3>
+      <button class="btn ghost tiny" id="clearHist" style="display:none">Clear</button>
+    </div>
+    <div id="history" class="chips" style="margin-top:10px"></div>
+  </div>
+
+  <h2>Using dice in class</h2>
+  <p><strong>Math warm-ups:</strong> roll 2d6 and race to add, multiply, or build fractions. <strong>Probability lessons:</strong> collect a history of d6 rolls and graph the distribution in front of everyone — real data in one click. <strong>Games & review:</strong> dice decide how many points a team can earn or how many squares a token moves. And d20 is the teacher's secret chaos engine: press a student's luck in seconds (pair it with the wheel spinner for the class list).</p>
+
+  <details>
+    <summary>Does it work offline?</summary>
+    <p>Once the page is loaded, it runs entirely in your browser — like every ClassSpark tool. Spotty classroom Wi-Fi won't stop your game.</p>
+  </details>
+
+  <h2>More free tools</h2>
+  <div class="moretools">
+    <a href="../wheel/">🎡 Wheel Spinner — random name picker</a>
+    <a href="../timer/">⏱️ Countdown Timer & Stopwatch</a>
+    <a href="../teams/">🧩 Random Team Generator</a>
+    <a href="../seating/">🪑 Seating Chart Maker</a>
+    <a href="../words/">🔤 Word Counter</a>
+  </div>
+</main>
+
+<footer>
+  <div>
+    <a href="../">All tools</a> · <a href="../wheel/">Wheel</a> · <a href="../timer/">Timer</a> · <a href="../teams/">Teams</a> · <a href="../seating/">Seating</a> · <a href="../words/">Words</a>
+  </div>
+  <p style="margin-top:8px">Dice Roller by ClassSpark — free forever.<br>© 2026 ClassSpark</p>
+</footer>
+</body>
+</html>

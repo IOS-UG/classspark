@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word Counter — Words, Characters, Sentences & Reading Time | ClassSpark</title>
+<meta name="description" content="Free word counter: count words, characters (with & without spaces), sentences, paragraphs, reading time and speaking time. Finds your top words. Instant, private, no sign-up.">
+<meta property="og:title" content="Free Word Counter with Reading Time">
+<meta property="og:description" content="Words, characters, sentences, paragraphs, reading & speaking time, top words — instantly as you type.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://classspark.pages.dev/words/">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E🔤%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/style.css">
+<script src="../shared/words.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How many pages is 500 words?","acceptedAnswer":{"@type":"Answer","text":"Roughly one single-spaced page (or two double-spaced pages) in 12pt font — about 400–500 words per page. Paste your text here to count words exactly as you type."}},
+{"@type":"Question","name":"How long does it take to read 1,000 words?","acceptedAnswer":{"@type":"Answer","text":"Average silent readers manage about 200 words per minute, so 1,000 words ≈ 5 minutes of reading (or ~7½ minutes of speaking). This counter shows both numbers live."}}
+]}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../">⚡ Class<span>Spark</span></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../wheel/">Wheel</a>
+      <a href="../timer/">Timer</a>
+      <a href="../teams/">Teams</a>
+      <a href="../seating/">Seating</a>
+      <a href="../dice/">Dice</a>
+      <a href="../words/" class="on">Words</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Word Counter</h1>
+  <p class="lead">Counts everything as you type — words, characters, sentences, paragraphs, reading time and speaking time — anything you paste stays in your browser.</p>
+
+  <div class="card">
+    <label class="field" for="text">Paste or type your text…</label>
+    <textarea id="text" class="manifest" style="min-height:280px"></textarea>
+    <div class="row" style="margin-top:12px">
+      <button class="btn ghost" id="copyBtn">⧉ Copy stats</button>
+      <button class="btn ghost" id="clearBtn">🧹 Clear text</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b id="w">0</b><small>words</small></div>
+      <div class="stat"><b id="c">0</b><small>characters</small></div>
+      <div class="stat"><b id="cnsp">0</b><small>chars, no spaces</small></div>
+      <div class="stat"><b id="sent">0</b><small>sentences</small></div>
+      <div class="stat"><b id="para">0</b><small>paragraphs</small></div>
+      <div class="stat"><b id="rd">0 s</b><small>reading time</small></div>
+      <div class="stat"><b id="sp">0 s</b><small>speaking time</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 10px">Your most-used words</h3>
+    <div id="topWords" class="chips"><small class="hint">—</small></div>
+  </div>
+
+  <h2>What reading time means here</h2>
+  <p>Reading time assumes average silent reading at ~200 words per minute; speaking time assumes a comfortable presentation pace of ~130 words per minute. Teachers set essay length limits, reading-in-turn segments and speech practice around these numbers; students check their essay rubrics ("500 words, 2 paragraphs") before submitting. Nothing you write here is sent anywhere — it's counted by your own browser, instantly.</p>
+
+  <h2>More free tools</h2>
+  <div class="moretools">
+    <a href="../wheel/">🎡 Wheel Spinner — random name picker</a>
+    <a href="../timer/">⏱️ Countdown Timer & Stopwatch</a>
+    <a href="../teams/">🧩 Random Team Generator</a>
+    <a href="../seating/">🪑 Seating Chart Maker</a>
+    <a href="../dice/">🎲 Dice Roller</a>
+  </div>
+</main>
+
+<div id="toast" class="toast">Copied ✓</div>
+
+<footer>
+  <div>
+    <a href="../">All tools</a> · <a href="../wheel/">Wheel</a> · <a href="../timer/">Timer</a> · <a href="../teams/">Teams</a> · <a href="../seating/">Seating</a> · <a href="../dice/">Dice</a>
+  </div>
+  <p style="margin-top:8px">Word Counter by ClassSpark — instant, private, free.<br>© 2026 ClassSpark</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seating Chart Maker — Drag, Arrange & Print Classroom Layouts | ClassSpark</title>
+<meta name="description" content="Free seating chart maker for teachers. Paste your class, auto-assign a random layout, drag students to rearrange, and print the chart. No account, lists stay on your device.">
+<meta property="og:title" content="Seating Chart Maker for Classrooms">
+<meta property="og:description" content="Auto-assign a fair random seating chart, drag to fine-tune, print it. Free for teachers.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://classspark.pages.dev/seating/">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E🪑%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/style.css">
+<script src="../shared/seating.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I make a seating chart for my class?","acceptedAnswer":{"@type":"Answer","text":"Paste your students one per line, choose a rows × columns setup and press Auto-assign for a fair random layout — or drag names from the unassigned box into any seat yourself."}},
+{"@type":"Question","name":"Can I swap two students?","acceptedAnswer":{"@type":"Answer","text":"Yes — drag one student onto the other's seat and they swap places. Drag a student back to the box below to leave a seat empty."}},
+{"@type":"Question","name":"Can I print the seating chart?","acceptedAnswer":{"@type":"Answer","text":"Yes — the Print button creates a clean one-page layout with a 'Front of class' orientation. Copy also exports seats as plain text."}}
+]}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../">⚡ Class<span>Spark</span></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../wheel/">Wheel</a>
+      <a href="../timer/">Timer</a>
+      <a href="../teams/">Teams</a>
+      <a href="../seating/" class="on">Seating</a>
+      <a href="../dice/">Dice</a>
+      <a href="../words/">Words</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Seating Chart Maker</h1>
+  <p class="lead">Randomize a fair seating plan, drag students to fine-tune, print it for the wall. Saved with each class list in your browser — nothing is uploaded anywhere.</p>
+
+  <div class="card controls">
+    <label class="field" for="roster">Students — one name per line</label>
+    <textarea id="roster" class="manifest" spellcheck="false"></textarea>
+
+    <div class="row" style="margin-top:12px">
+      <div class="row" style="gap:6px"><label class="check" for="rowsIn">Rows</label><input class="txt" id="rowsIn" type="number" min="2" max="10" style="max-width:80px"></div>
+      <div class="row" style="gap:6px"><label class="check" for="colsIn">Columns</label><input class="txt" id="colsIn" type="number" min="2" max="10" style="max-width:80px"></div>
+    </div>
+
+    <div class="row" style="margin-top:12px">
+      <button class="btn big" id="autoBtn">🎲 Auto-assign</button>
+      <button class="btn ghost" id="clearBtn">🧹 Clear seats</button>
+      <button class="btn ghost" id="copyBtn">⧉ Copy layout</button>
+      <button class="btn ghost" id="printBtn">🖨️ Print</button>
+    </div>
+    <p class="hint" id="stats" style="margin:8px 0 0"></p>
+
+    <div class="row" style="margin-top:12px;border-top:1px dashed #e2e8f0;padding-top:12px">
+      <input class="txt" id="listName" placeholder="Save class as… (e.g. Period 3)">
+      <button class="btn ghost tiny" id="saveList">Save</button>
+      <button class="btn danger tiny" id="deleteList">Delete</button>
+      <select class="txt" id="savedLists" style="max-width:210px"></select>
+    </div>
+  </div>
+
+  <div class="card" id="gridWrap">
+    <div class="frontbar">▲ FRONT OF CLASS / BOARD ▲</div>
+    <div id="grid" class="seatgrid"></div>
+    <h3 style="margin:16px 0 8px">Unassigned</h3>
+    <div id="pool"></div>
+  </div>
+
+  <h2>Why a random seating chart works</h2>
+  <p>The start-of-term battle: separate the chatty pair without hurting feelings, and make sure nobody is always cornered. This maker deals a fresh <em>random</em> layout that nobody can blame you for — then you drag any seat to fine-tune it around real needs (sightlines, helpful neighbors, empty desks). New random layout every few weeks keeps the room fresh and student groups mixed.</p>
+
+  <details>
+    <summary>Can I leave seats empty?</summary>
+    <p>Yes — an empty grid cell is simply a free desk. Drag anyone back to the “Unassigned” box to free their seat, or don't assign them yet.</p>
+  </details>
+  <details>
+    <summary>Does it remember my layout between visits?</summary>
+    <p>Yes — your last chart and any saved class lists stay in this browser on your own device. No account, no uploads.</p>
+  </details>
+
+  <h2>More free tools</h2>
+  <div class="moretools">
+    <a href="../wheel/">🎡 Wheel Spinner — random name picker</a>
+    <a href="../timer/">⏱️ Countdown Timer & Stopwatch</a>
+    <a href="../teams/">🧩 Random Team Generator</a>
+    <a href="../dice/">🎲 Dice Roller</a>
+    <a href="../words/">🔤 Word Counter</a>
+  </div>
+</main>
+
+<div id="toast" class="toast">Copied ✓</div>
+
+<footer>
+  <div>
+    <a href="../">All tools</a> · <a href="../wheel/">Wheel</a> · <a href="../timer/">Timer</a> · <a href="../teams/">Teams</a> · <a href="../dice/">Dice</a> · <a href="../words/">Words</a>
+  </div>
+  <p style="margin-top:8px">Seating Chart Maker by ClassSpark — free forever, data stays local.<br>© 2026 ClassSpark</p>
+</footer>
+</body>
+</html>

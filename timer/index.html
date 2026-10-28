@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Countdown Timer & Stopwatch for Classrooms (Fullscreen) | ClassSpark</title>
+<meta name="description" content="Free online countdown timer and stopwatch for teachers. Big fullscreen display for smartboards, presets up to 30 minutes, loud alarm, lap times. No sign-up.">
+<meta property="og:title" content="Classroom Countdown Timer & Stopwatch">
+<meta property="og:description" content="Big, fullscreen countdown timer for the classroom. Presets, alarm, lap stopwatch. Free, no sign-up.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://classspark.pages.dev/timer/">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E⏱️%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/style.css">
+<script src="../shared/timer.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I set a 10 minute timer?","acceptedAnswer":{"@type":"Answer","text":"Click the 10 min preset button and press Start — or type any number of minutes and press Set. Press theFullscreen button to show it on a projector."}},
+{"@type":"Question","name":"Does the alarm sound if the tab is in the background?","acceptedAnswer":{"@type":"Answer","text":"Yes — the timer keeps running off a real clock, keeps counting even when the tab is hidden or the screen is off, and the alarm plays on time."}}
+]}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../">⚡ Class<span>Spark</span></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../wheel/">Wheel</a>
+      <a href="../timer/" class="on">Timer</a>
+      <a href="../teams/">Teams</a>
+      <a href="../seating/">Seating</a>
+      <a href="../dice/">Dice</a>
+      <a href="../words/">Words</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Classroom Countdown Timer & Stopwatch</h1>
+  <p class="lead">Huge display your whole class reads from the back row. Presets for quizzes and brain breaks, fullscreen for the projector, and a lap stopwatch for turns — all free, all instant.</p>
+
+  <div class="row" style="gap:14px">
+    <div class="tabs" role="tablist">
+      <button class="on" data-mode="count">⏳ Countdown</button>
+      <button data-mode="stop">⏱️ Stopwatch</button>
+    </div>
+    <button class="btn ghost tiny" id="fsBtn">⛶ Fullscreen</button>
+    <label class="check"><input type="checkbox" id="sound" checked> Alarm sound</label>
+  </div>
+
+  <section id="painCount" class="card" style="margin-top:16px">
+    <div class="stage">
+      <div id="cdMsg" class="msg"></div>
+      <div id="cd" class="display">10:00</div>
+      <div class="row" style="justify-content:center;margin-top:8px">
+        <button class="btn big" id="cdStart">Start</button>
+        <button class="btn ghost" id="cdReset">Reset</button>
+      </div>
+      <div class="row" style="justify-content:center;margin-top:2px" id="presets"></div>
+      <div class="row" style="justify-content:center">
+        <input class="txt" id="mins" type="number" min="0.5" max="600" step="0.5" placeholder="Custom minutes e.g. 2.5">
+        <button class="btn ghost tiny" id="setMin">Set</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="painStop" class="card" style="margin-top:16px" hidden>
+    <div class="stage">
+      <div id="sw" class="display">0:00.00</div>
+      <div class="row" style="justify-content:center;margin-top:8px">
+        <button class="btn big" id="swStart">Start</button>
+        <button class="btn ghost" id="swLap" disabled>Lap</button>
+        <button class="btn ghost" id="swReset">Reset</button>
+      </div>
+      <ol id="swLaps" class="laps"></ol>
+    </div>
+  </section>
+
+  <h2>Built for real classrooms</h2>
+  <p><strong>Timed quizzes & turn-and-talk:</strong> hit a preset, press start, done. <strong>Brain breaks & games:</strong> the giant numbers and fullscreen mode turn your smartboard into the class scoreboard clock. <strong>Group rotations:</strong> the lap stopwatch tracks each rotation's time. The countdown keeps ticking even if the tab is buried — it runs on a real clock, and the alarm fires exactly when promised, even if the ringer was off in a hidden tab.</p>
+
+  <details>
+    <summary>Will the timer continue if I switch tabs or turn the screen off?</summary>
+    <p>Yes. It measures against a real clock, not tick counting — background tabs, screen locks and other apps can't slow it down.</p>
+  </details>
+  <details>
+    <summary>Can I use a custom time like 2½ minutes?</summary>
+    <p>Type <em>2.5</em> in the custom field and press Set — decimals work exactly like you'd expect.</p>
+  </details>
+
+  <h2>More free tools</h2>
+  <div class="moretools">
+    <a href="../wheel/">🎡 Wheel Spinner — random name picker</a>
+    <a href="../teams/">🧩 Random Team Generator</a>
+    <a href="../seating/">🪑 Seating Chart Maker</a>
+    <a href="../dice/">🎲 Dice Roller</a>
+    <a href="../words/">🔤 Word Counter</a>
+  </div>
+</main>
+
+<footer>
+  <div>
+    <a href="../">All tools</a> · <a href="../wheel/">Wheel</a> · <a href="../teams/">Teams</a> · <a href="../seating/">Seating</a> · <a href="../dice/">Dice</a> · <a href="../words/">Words</a>
+  </div>
+  <p style="margin-top:8px">Classroom Timer by ClassSpark — free forever.<br>© 2026 ClassSpark</p>
+</footer>
+</body>
+</html>

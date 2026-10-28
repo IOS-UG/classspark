@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wheel Spinner — Random Name Picker for Classroom | ClassSpark</title>
+<meta name="description" content="Free wheel spinner / random name picker for teachers. Paste your class list, spin, and pick a student fairly. Save lists in your browser, auto-remove winners. No sign-up.">
+<meta property="og:title" content="Wheel Spinner — Random Name Picker">
+<meta property="og:description" content="Paste your class list and spin. Fair, fun, and free random student picker for any classroom.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://classspark.pages.dev/wheel/">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E🎡%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/style.css">
+<script src="../shared/wheel.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I pick a random student?","acceptedAnswer":{"@type":"Answer","text":"Paste your class list into the box (one name per line), then press Spin or tap the middle of the wheel. The winner appears under the pointer."}},
+{"@type":"Question","name":"How do I save my class list?","acceptedAnswer":{"@type":"Answer","text":"Type a name in the small field below the list and press Save. It stays in your browser storage — no account needed."}},
+{"@type":"Question","name":"Can the wheel remove picked students?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turn on Auto-remove so every picked student is taken off the wheel — perfect for ensuring every student gets a turn."}}
+]}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../">⚡ Class<span>Spark</span></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../wheel/" class="on">Wheel</a>
+      <a href="../timer/">Timer</a>
+      <a href="../teams/">Teams</a>
+      <a href="../seating/">Seating</a>
+      <a href="../dice/">Dice</a>
+      <a href="../words/">Words</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Wheel Spinner — Random Name Picker</h1>
+  <p class="lead">Paste your class list, hit <strong>SPIN</strong>, and let the wheel pick the student fairly. Press the spacebar to spin. Lists save in your browser — no account, never sent anywhere.</p>
+
+  <div class="card tool-grid">
+    <div class="controls">
+      <label class="field" for="names">Class list — one name per line</label>
+      <textarea id="names" class="manifest" spellcheck="false"></textarea>
+
+      <div class="row" style="margin-top:12px">
+        <label class="check"><input type="checkbox" id="autoRemove" checked> Auto-remove winners</label>
+        <label class="check"><input type="checkbox" id="sound" checked> Sound</label>
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <input class="txt" id="listName" placeholder="Save list as… (e.g. 1st period)">
+        <button class="btn ghost tiny" id="saveList">Save</button>
+        <button class="btn danger tiny" id="deleteList">Delete</button>
+      </div>
+      <div class="row">
+        <select class="txt" id="savedLists" style="max-width:230px"></select>
+      </div>
+      <p><small class="hint">💾 Saved lists live only in this browser on this device.</small></p>
+    </div>
+
+    <div>
+      <div class="wheel-wrap">
+        <div class="wheel-arrow"></div>
+        <canvas id="wheel" width="1080" height="1080"></canvas>
+        <button id="capSpin" class="wheel-cap" aria-label="Spin the wheel">SPIN</button>
+      </div>
+      <div class="row" style="justify-content:center;margin-top:16px">
+        <button class="btn big" id="spinBtn">🎡 Spin!</button>
+        <button class="btn ghost" id="shuffleBtn">🔀 Shuffle order</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="justify-content:space-between">
+      <h3 style="margin:0">Recent winners</h3>
+      <button class="btn ghost tiny" id="clearHist" style="display:none">Clear</button>
+    </div>
+    <div id="history" class="chips" style="margin-top:10px"></div>
+  </div>
+
+  <h2>How teachers use the wheel</h2>
+  <p><strong>Fair cold-calling:</strong> every student knows the wheel decides — no hands, no favorites. Turn on <em>Auto-remove winners</em> and every student gets a turn before the wheel refills. <strong>Brain breaks:</strong> put activities on the wheel instead of names and let the class spin for the next game. <strong>Presentations:</strong> spin to pick the next presenter. <strong>All quiet on the front:</strong> project it fullscreen on the smartboard — the class watches the wheel slow down together.</p>
+
+  <details>
+    <summary>Is the pick really random?</summary>
+    <p>Yes — the wheel uses your browser's random number generator to choose the winning segment before the animation, then slows down exactly onto it. Every entry has an equal chance.</p>
+  </details>
+  <details>
+    <summary>Can I give some students a higher chance?</summary>
+    <p>Add the same name more than once — repeated names appear on extra segments, so some students truly do get two or three shots. Teachers use this for extra motivation.</p>
+  </details>
+  <details>
+    <summary>Does it work on a smartboard / tablet?</summary>
+    <p>Yes. Open this page on any device, tap SPIN — no app, no install, no Wi-Fi login forms. The page works with or without a keyboard.</p>
+  </details>
+
+  <h2>More free tools</h2>
+  <div class="moretools">
+    <a href="../timer/">⏱️ Countdown Timer & Stopwatch</a>
+    <a href="../teams/">🧩 Random Team Generator</a>
+    <a href="../seating/">🪑 Seating Chart Maker</a>
+    <a href="../dice/">🎲 Dice Roller</a>
+    <a href="../words/">🔤 Word Counter</a>
+  </div>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-in">
+    <div class="emoji">🎉</div>
+    <h2>Winner</h2>
+    <div id="winnerName">—</div>
+    <div class="row" style="justify-content:center">
+      <button class="btn" id="modalResp">Spin again 🎡</button>
+      <button class="btn ghost" id="modalRemove">Remove name</button>
+      <button class="btn ghost" id="modalClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <a href="../">All tools</a> · <a href="../timer/">Timer</a> · <a href="../teams/">Teams</a> · <a href="../seating/">Seating</a> · <a href="../dice/">Dice</a> · <a href="../words/">Words</a>
+  </div>
+  <p style="margin-top:8px">Wheel Spinner by ClassSpark — your lists stay in your browser.<br>© 2026 ClassSpark</p>
+</footer>
+</body>
+</html>
