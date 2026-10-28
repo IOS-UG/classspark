@@ -29,7 +29,7 @@ File | What it is
 ## First-week SEO (do once the site is live)
 
 1. **Google Search Console** (searchCentral → search.google.com/search-console) → add your property → verify.
-2. Replace `classspark.pages.dev` in `sitemap.xml` with your real domain, then submit the sitemap in Search Console.
+2. Replace `ios-ug.github.io/classspark` in `sitemap.xml` with your real domain, then submit the sitemap in Search Console.
 3. Request *manual indexing* of the homepage + wheel page from Search Console (speeds up discovery).
 4. Confirm each page's `canonical` URL matches its final address (search-and-replace the same domain from step 2).
 

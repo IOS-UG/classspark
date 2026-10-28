@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://classspark.pages.dev/sitemap.xml
+Sitemap: https://ios-ug.github.io/classspark/sitemap.xml
