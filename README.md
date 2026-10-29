@@ -17,23 +17,21 @@ File | What it is
 `shared/` | style.css + one .js per tool
 `robots.txt`, `sitemap.xml` | SEO plumbing
 
-## Launch today (~15 minutes, $0)
+## ✅ Launched — live on GitHub Pages
 
-1. Go to **netlify.com** → sign up free.
-2. After login, drag & drop the whole `class-spark` folder onto the deploy area → your site is live at `something.netlify.app`.
-3. Site settings → *Change site name* → pick something free. Try `classsparktools.netlify.app` or `classspark-app.netlify.app`.
-4. Test all 3 tools once (visit them on your phone too). That's your initial "MVP" proof.
+**Live URL:** `https://ios-ug.github.io/classspark/` (all 7 pages verified HTTP 200)
+**Repo:** `https://github.com/IOS-UG/classspark` (public — link this to clients/buyers; also serves as your backup)
 
-**Optional custom domain (~$10/yr):** Namecheap → buy e.g. `classspark.app` or a name you like → Netlify → *Domain settings → Add domain* → enter the two Namecheap DNS records Netlify shows (A/CNAME). SSL is automatic + free.
+Shipping updates is now fully automatic: edit files → `git add -A && git commit -m "…" && git push` → Pages rebuilds in ~1 minute.
+
+**Optional upgrade (~$10/yr):** buy a short domain (e.g. `classspark.app`) → GitHub repo *Settings → Pages → Custom domain* → enter it, add the DNS records GitHub shows → then ask me to repoint every canonical/sitemap URL to it (one command). A custom domain lifts brand + long-term ad rates.
 
 ## First-week SEO (do once the site is live)
 
-1. **Google Search Console** (searchCentral → search.google.com/search-console) → add your property → verify.
-2. Replace `ios-ug.github.io/classspark` in `sitemap.xml` with your real domain, then submit the sitemap in Search Console.
-3. Request *manual indexing* of the homepage + wheel page from Search Console (speeds up discovery).
-4. Confirm each page's `canonical` URL matches its final address (search-and-replace the same domain from step 2).
-
-Then sign up for **Google Analytics 4** and paste its snippet into every page's `<head>` right before `</head>` so you can watch traffic arrive.
+1. **Google Search Console** → add property `https://ios-ug.github.io/classspark/` (URL-prefix method) → verify.
+2. Submit `https://ios-ug.github.io/classspark/sitemap.xml` under *Sitemaps*.
+3. Request *manual indexing* of the homepage + wheel page (speeds up discovery).
+4. Canonicals and sitemap already point at the live URL — nothing to replace. (Add a GA4 snippet later when tracking traffic matters.)
 
 ## AdSense (money) — when and how
 
@@ -53,24 +51,19 @@ Then sign up for **Google Analytics 4** and paste its snippet into every page's 
 
 1. Ask me: **"add tool: [idea]"** — I build the page + JS, you deploy.
 2. Update `sitemap.xml` (I do it) → submit in Search Console.
-3. When you pass 5–10 funds → flip on AdSense; later upgrade to premium ad networks at ~50k visits/mo (they pay 4–10× more).
+3. At ~10 quality pages & 3–4 weeks of age → apply to AdSense; later upgrade to premium networks at ~50k visits/mo (they pay 4–10× more).
 
-## Backup rule (do this after deploying)
+## Backup (already handled)
 
-Copy the whole `class-spark` folder somewhere safe weekly (or push it to a free **GitHub** repo). Hosting a free deploy means being able to re-drag the folder anytime — nothing can be "lost."
+Code is committed and pushed to GitHub after every change — that *is* your backup.
 
-## Push to GitHub (~3 minutes, one-time)
+## GitHub (done)
 
-1. Go to **github.com/new** → repository name: `classspark` → Public → Create (no checkboxes).
-2. In your terminal on this machine, inside this folder run exactly two commands (replace `YOUR-USERNAME`):
-
-```
-git remote add origin https://github.com/YOUR-USERNAME/classspark.git
-git push -u origin main
-```
-
-Done — your code is now backed up on GitHub. Bonus: GitHub + Cloudflare Pages/Starter connects automatically and lets you deploy by pushing.
-**Change the commit author identity if you want your real name:** `git config user.name "Your Name"` and `git config user.email "you@example.com"` (ask your AI companion to amend the first commit afterwards).
+- Repo: **https://github.com/IOS-UG/classspark** (public)
+- Pages hosting: on, auto-rebuilds from `main`
+- Push credential saved in `~/.git-credentials` on this machine — pushes need nothing extra
+- Revoke my access anytime: delete the `classspark` token at github.com/settings/tokens (paste a fresh one next session to restore)
+- Want your real name on commits? `git config user.name "Your Name" && git config user.email "you@example.com"`, then ask me to rewrite history
 
 ## Renaming the brand
 
